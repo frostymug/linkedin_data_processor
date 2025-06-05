@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2>{{ table_name }}</h2>
+        <div class="table-container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        {% for col in columns %}
+                        <th>{{ col[1] }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in rows %}
+                    <tr>
+                        {% for col in columns %}
+                        <td>{{ row[col[1]] }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
